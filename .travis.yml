@@ -1,0 +1,21 @@
+language: java
+
+jdk:
+  - openjdk17
+
+os: linux
+dist: jammy
+
+cache:
+  directories:
+    - $HOME/.m2
+
+install: true
+
+script:
+  - mvn -B clean verify
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
